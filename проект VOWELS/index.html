@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Vowels</title>
+</head>
+<body>
+    <script>
+        let str, rusString = {
+            "а": 0,
+            "е": 0,
+            "ё": 0,
+            "и": 0,
+            "о": 0,
+            "у": 0,
+            "ы": 0,
+            "э": 0,
+            "ю": 0,
+            "я": 0
+        };
+
+        function countString(str){
+            let sum = 0;
+            for (let i = 0; i < str.length; i++) {
+                let char = str.charAt(i);
+                if ( char in rusString ){
+                    rusString[char]++;
+                }
+            }
+            for(let i in rusString ){
+                sum += rusString[i];
+            }
+            return sum;
+        }
+
+        do {
+            str = prompt("Введите строку русскими симовлами");
+        } while(!str);
+        
+        let sum = countString(str);
+        alert(`Количество гласных в строке: ${sum}`);
+    </script>
+</body>
+</html>

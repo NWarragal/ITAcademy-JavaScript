@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Drinks Hash Function</title>
+  </head>
+  <body>
+    <script>
+      let obj = {
+        addValue: function(key, value) {
+          this[key] = value;
+        },
+        getValue: function(key) {
+          console.log(this[key]);
+        },
+        deleteValue: function(key) {
+          if (key in this) {
+            delete this[key];
+            return true;
+          } else return false;
+        },
+        getKeys: function() {
+          return Object.keys(this);
+        }
+      };
+    </script>
+  </body>
+</html>

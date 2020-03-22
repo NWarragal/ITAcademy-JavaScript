@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Treesum</title>
+</head>
+<body>
+    <script>
+        let tree = [ 5, 7, 
+        [ 4, [2], 8, [1,3], 2 ], 
+        [ 9, [] ], 1, 8];
+        
+        function treesum(tree){
+            let sum = 0;
+            for(let i = 0; i < tree.length; i++){
+                if(Array.isArray(tree[i])){
+                    let ms = tree[i];
+                    sum += treesum(ms);
+                } else {
+                    sum += tree[i];
+                }
+            }
+            return sum;
+        }
+
+        let sum = treesum(tree);
+        alert(`Сумма элементов: ${sum}`);
+    </script>
+</body>
+</html>

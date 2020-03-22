@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Drinks Hash Function(From mail)</title>
+  </head>
+  <body>
+    <script>
+      let obj = {};
+      let addValue = function(key, value) {
+        obj[key] = value;
+      };
+      let getValue = function(key) {
+        return obj[key];
+      };
+      let deleteValue = function(key) {
+        if (key in obj) {
+          delete obj[key];
+          return true;
+        } else return false;
+      };
+      let getKeys = function() {
+        return Object.keys(obj);
+      };
+      let exitFlag = false;
+      while (!exitFlag) {
+        let choise = prompt(`
+          Choose what to do with object(obj):
+          1. Add value
+          2. Get value
+          3. Delete value
+          4. Get keys
+          5. Exit`);
+        switch (choise * 1) {
+          case 1:
+            let key = prompt("Enter key", "key");
+            let value = prompt("Enter value", 0);
+            addValue(key, value);
+            console.log(obj);
+            break;
+          case 2:
+            let key = prompt("Enter key", "key");
+            let value = getValue(key);
+            console.log(value);
+            break;
+          case 3:
+            let key = prompt("Enter key", "key");
+            let result = deleteValue(key, value);
+            console.log(result);
+            console.log(obj);
+            break;
+          case 4:
+            let keys = getKeys();
+            console.log(keys);
+            console.log(obj);
+            break;
+          case 5:
+            exitFlag = true;
+            break;
+          default:
+            continue;
+        }
+      }
+    </script>
+  </body>
+</html>

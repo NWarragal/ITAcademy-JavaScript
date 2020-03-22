@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mood</title>
+  </head>
+
+  <body>
+    <script>
+      "use strict";
+
+      function randomDiap(n, m) {
+        return Math.floor(Math.random() * (m - n + 1)) + n;
+      }
+
+      function mood(colorsCount) {
+        var colors = [
+          "",
+          "красный",
+          "оранжевый",
+          "жёлтый",
+          "зелёный",
+          "голубой",
+          "синий",
+          "фиолетовый"
+        ];
+
+        //new part of code ---------------------
+        let checkColor = {};
+        if(colorsCount >= 8 || colorsCount <= 0 || isNaN(colorsCount) || colorsCount % 1 != 0){
+            console.log("Error");
+            colorsCount = 7;
+        }
+        //end-----------------------------------
+
+        console.log("цветов: " + colorsCount);
+        for (var i = 1; i <= colorsCount; i++) {
+          var n = randomDiap(1, 7);
+          var colorName = colors[n];
+
+          //new part of code ---------------------
+          if (colorName in checkColor) {
+            i--;
+            continue;
+          } else {
+            checkColor[colorName] = true;
+          }
+          //end-----------------------------------
+
+          console.log(colorName);
+        }
+      }
+
+      mood(8);
+    </script>
+  </body>
+</html>

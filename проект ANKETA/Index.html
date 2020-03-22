@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Anketa</title>
+</head>
+<body>
+    <script>
+        let name, secondname, surname, age = 0, gender;
+        do{
+            name = prompt("Введите ваше имя", "Иван");
+        } while(!name);
+
+        do{
+            surname = prompt("Введите вашу фамилию", "Иванов");
+        } while(!surname);
+
+        do{
+            secondname = prompt("Введите ваше отчество", "Иванович");
+        } while(!secondname);
+
+        do{
+            age = prompt("Введите ваш возраст", 20);
+        } while(age < 0 || age > 130 || age % 1 != 0 || isNaN(age));
+
+        if(confirm("Вы мужчина?") == false){
+            gender = false;
+        } else {
+            gender = true;
+        }
+
+        let answer;
+        if(gender == false){
+            if(age > 57){answer = "Да"} else {answer = "Нет"}
+        } else {
+            if(age > 62){answer = "Да"} else {answer = "Нет"}
+        }
+        
+        alert(`
+        Ваше ФИО: ${surname} ${name} ${secondname}
+        Ваш возраст в годах: ${age}
+        Ваш возраст в днях: ${age * 365}
+        Через 5 лет вам будет: ${age * 1 + 5}
+        Ваш пол: ${gender ? "Мужской" : "Женский"}
+        Вы на пенсии: ${answer}`);
+
+    </script>
+</body>
+</html>

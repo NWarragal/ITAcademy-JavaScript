@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Vowels_Arr</title>
+</head>
+
+<body>
+    <script>
+        let str, rusString = {
+            "а": 0,
+            "е": 0,
+            "ё": 0,
+            "и": 0,
+            "о": 0,
+            "у": 0,
+            "ы": 0,
+            "э": 0,
+            "ю": 0,
+            "я": 0
+        };
+        //1
+        function countString1(str) {
+            let sum = 0;
+            str = str.split("").forEach(function (v) {
+                if (v in rusString) sum++;
+            });
+            return sum;
+        }
+        //2
+        function countString2(str) {
+            str = str.split("").filter(function (v) {
+                return v in rusString;
+            });
+            return str.length;
+        }
+        //3
+        function countString3(str) {
+            return str.split("").reduce(function (r, v) {
+                if (v in rusString) return r + 1;
+                return r;
+            }, 0);;
+        }
+
+        do {
+            str = prompt("Введите строку русскими симовлами");
+        } while (!str);
+
+        str = str.toLowerCase();
+
+        let sum = countString1(str);
+        alert(`Количество гласных в строке(1 способ): ${sum}`);
+
+        sum = countString2(str);
+        alert(`Количество гласных в строке(2 способ): ${sum}`);
+
+        sum = countString3(str);
+        alert(`Количество гласных в строке(3 способ): ${sum}`);
+    </script>
+</body>
+
+</html>
