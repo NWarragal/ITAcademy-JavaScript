@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Lesson 3</title>
+</head>
+<body>
+    <script>
+        alert("first");
+        let numb, sum = 0;
+        do{
+            numb = prompt("Enter number", 0);
+            sum += numb * 1;
+        } while(numb != 0)
+        alert(`Summ is ${sum}`);
+
+        alert("second");
+        let ms = [], i = 0, max = 0;
+        do{
+            numb = prompt("Enter number", 0);
+            if(numb != 0){
+                ms[i] = numb;
+            }
+            if(max * 1 < ms[i] * 1){
+                max = ms[i] 
+            }
+            i++;
+        } while(numb != 0)
+        alert(`
+        ${ms}
+        maximum: ${max}`);
+
+        alert("third");
+        ms = [];
+        i = 0;
+        let ms2 = [], j = 0;
+        do{
+            numb = prompt("Enter number", 0);
+            if(numb != 0){
+                ms[i] = numb;
+            }
+            if(ms[i] * 1 % 2 == 0){
+                ms2[j] = ms[i];
+                j++;
+            }
+            i++;
+        } while(numb != 0)
+        alert(`
+        ${ms}
+        only even: ${ms2}`);
+
+        alert("fourth");
+        let k = 1;
+        for(i = 0; i < ms.length; i++){
+            for(j = 1; j < ms.length; j++){
+                if(ms[j - 1] > ms[j]){
+                    k = ms[j];
+                    ms[j] = ms[j - 1];
+                    ms[j - 1] = k;
+                }
+            }
+        }
+        alert(`
+        ${ms}`);
+    </script>
+</body>
+</html>

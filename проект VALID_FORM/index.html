@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Valid form</title>
+    <link rel="stylesheet" href="reset.css">
+</head>
+
+<body>
+    <form id="form" action="https://fe.it-academy.by/TestForm.php" style="margin: 20px;">
+        <div>
+            <p style="width: 150px; display: inline-block;">Разработчики:</p>
+            <input type="text" style="width: 400px;" name="developers">
+        </div>
+        <div>
+            <p style="width: 150px; display: inline-block;">Название сайта:</p>
+            <input type="text" style="width: 400px;" name="sitename">
+        </div>
+        <div>
+            <p style="width: 150px; display: inline-block;">URL сайта:</p>
+            <input type="text" style="width: 300px;" name="siteurl">
+        </div>
+        <div>
+            <p style="width: 150px; display: inline-block;">Дата запуска сайта:</p>
+            <input type="text" style="width: 100px;" name="date">
+        </div>
+        <div>
+            <p style="width: 150px; display: inline-block;">Посетителей в сутки:</p>
+            <input type="text" style="width: 100px;" name="visitors">
+        </div>
+        <div>
+            <p style="width: 150px; display: inline-block;">E-mail для связи:</p>
+            <input type="text" style="width: 200px;" name="email">
+        </div>
+        <div>
+            <p style="width: 150px; display: inline-block;">Рубрика каталога:</p>
+            <select name="division">
+                <option value="1">здоровье</option>
+                <option value="2">домашний уют</option>
+                <option value="3">бытовая техника</option>
+            </select>
+        </div>
+        <div>
+            <p style="width: 150px; display: inline-block;">Размещение:</p>
+            <input type="radio" value="1" name="payment">
+            <span>бесплатное</span>
+            <input type="radio" value="2" name="payment">
+            <span>платное</span>
+            <input type="radio" value="3" name="payment">
+            <span>VIP</span>
+        </div>
+        <div>
+            <p style="width: 150px; display: inline-block;">Разрешить отзывы:</p>
+            <input type="checkbox" name="votes">
+        </div>
+        <div>
+            <p style="width: 150px; display: inline-block;">Описание сайта:</p>
+            <div><textarea rows="3" style="width: 550px;" name="description"></textarea></div>
+        </div>
+        <div><input type="submit" value="Опубликовать"></div>
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Lesson 6</title>
+</head>
+
+<body>
+    <script>
+        //task1
+        class Worker {
+            constructor(__name, __surname) {
+                let name = __name;
+                let surname = __surname;
+                let rate = 0;
+                let days = 0;
+
+                this.setRate = function (_rate) {
+                    rate = _rate;
+                }
+
+                this.setDays = function (_days) {
+                    days = _days;
+                }
+                this.setName = function (_name) {
+                    name = _name;
+                }
+
+                this.setSurname = function (_surname) {
+                    surname = _surname;
+                }
+
+
+
+                this.getName = function () {
+                    return name;
+                }
+
+                this.getSurname = function () {
+                    return surname;
+                }
+
+                this.getRate = function () {
+                    return rate;
+                }
+
+                this.getDays = function () {
+                    return days;
+                }
+
+
+
+                this.getSalary = function () {
+                    return rate * days;
+                }
+            }
+        }
+
+        let worker = new Worker("Alex", "Potapov");
+
+
+        //task2
+        let str = prompt("Enter String", "aaaa"), flag = true, ms = str.split("");
+        str = str.toLowerCase();
+
+        //1var
+        for (let i = 0; i < str.length / 2; i++) {
+            if (str[i] != str[str.length - i - 1]) {
+                flag = false;
+                alert("Not palindrome");
+                break;
+            }
+        }
+        if (flag) alert("Palindrome");
+
+        //2var
+        if (ms.every(function (v, i) {
+            return v == ms[ms.length - i - 1];
+        })) alert("Palindrome");
+        else alert("Not palindrome");
+
+        //3var
+        if (str == str.split("").reverse().join("")) alert("Palindrome");
+        else alert("Not palindrome");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Lesson5</title>
+</head>
+
+<body>
+    <script>
+        // //task 1
+        // alert("first");
+        // let msnew = [], ms = [1, 31, 4, 6, 8, 5, 0, 32, 2, 0, 43, 1, 0, 4, 43, 2, 4, 0, 1];
+        // for(let i = 0; i < ms.length; i++){
+        //     if(ms[i] == 0){
+        //         msnew.unshift(ms[i]);
+        //     } else {
+        //         msnew.push(ms[i]);
+        //     }
+        // }
+        // alert(`
+        // Before: ${ms}
+        // After: ${msnew}`);
+
+        // //task 2
+        // alert("second");
+        // let num = prompt(`Enter num
+        // oldms: ${ms}`, 1), sum = 0, j;
+        // msnew = [];
+        // for(let i = 0; i < ms.length; i++){
+        //     j = i;
+        //     while(sum < num){
+        //         sum += ms[j];
+        //         j++;
+        //     }
+        //     if(sum == num){
+        //         msnew = ms.slice(i, j);
+        //         alert(msnew);
+        //         msnew = [];
+        //     }
+        //     sum = 0;
+        // }
+
+        // //task 3
+        // alert("third");
+        // let checkms = {};
+        // for(let i = 0; i < ms.length; i++){
+        //     if(ms[i] in checkms){
+        //         checkms[ms[i]]++;
+        //     } else {
+        //         checkms[ms[i]] = 1;
+        //     }
+        // }
+        // for(let i = 0; i < ms.length; i++){
+        //     if(ms[i] % 2 == 0){
+        //         if(checkms[ms[i]] < 2){
+        //             msnew.push(ms[i]);//можно юзать фильтр вместо этого!!!
+        //         }
+        //     } else {
+        //         if(checkms[ms[i]] < 3){
+        //             msnew.push(ms[i]);
+        //         }
+        //     }
+        // }
+        // alert(`
+        // oldms: ${ms}
+        // newms: ${msnew}`);
+
+        // //task 4
+        // alert("fourth");
+        // function getRandomInt(max) {
+        //     return Math.floor(Math.random() * Math.floor(max));
+        // }
+        // let n = prompt("enter N", 10), msec = [], count = 0;
+        // for(let i = 0; i < n; i++){
+        //     msec[i] = getRandomInt(11);
+        // }
+        // for(let i = 1; i < msec.length; i++){
+        //     if(msec[i - 1] == msec[i]) count++;
+        // }
+        // alert(`
+        // ms: ${msec}
+        // count: ${count}`);
+
+        //task 5
+        let sum = 0;
+        let num = 0;
+        function sumMsNum(a){
+            if(a > 9){
+                let b = a / 10;
+                let c = a % 10;
+                sum += c;
+                if(b > 9) sumMsNum(b);
+                else sum += b;
+            } else sum += a;
+        }
+    </script>
+</body>
+
+</html>
