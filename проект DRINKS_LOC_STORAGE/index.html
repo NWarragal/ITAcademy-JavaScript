@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Drinks Local Storage</title>
+</head>
+
+<body>
+    <div id="wrapper"></div>
+    <script>
+        class LocStorageClass {
+            constructor() {
+            }
+
+            addValue(key, value) {
+                localStorage.setItem(key, value);
+            }
+
+            getValue(key) {
+                return localStorage.getItem(key);
+            }
+
+            deleteValue(key) {
+                if (key in localStorage) {
+                    localStorage.removeItem(key);
+                    return true;
+                } else return false;
+            }
+
+            getKeys() {
+                let keys = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    keys[i] = localStorage.key(i);
+                }
+                return keys;
+            }
+
+            removeAll() {
+                localStorage.clear();
+            }
+        }
+
+        function createLocStorageWork(name, classPar) {
+            let maindiv = document.createElement("div");
+            maindiv.style.padding = '0 0 50px 0 ';
+            maindiv.style.display = 'block';
+            maindiv.setAttribute('class', name + '_class');
+
+            let div1 = document.createElement("div");
+            let label1 = document.createElement('label');
+            label1.textContent = name + " key";
+            let input1 = document.createElement("input");
+            label1.appendChild(input1);
+            div1.appendChild(label1);
+
+            let div2 = document.createElement("div");
+            let label2 = document.createElement('label');
+            label2.textContent = name + " data";
+            let input2 = document.createElement("input");
+            label2.appendChild(input2);
+            div2.appendChild(label2);
+
+            div3 = document.createElement("div");
+            let label3 = document.createElement('label');
+            label3.textContent = "Info";
+            let label31 = document.createElement('label');
+            label31.style.marginLeft = "20px";
+            div3.appendChild(label3);
+            div3.appendChild(label31);
+
+            div4 = document.createElement("div");
+            let msinfo = ["addValue", "getValue", "deleteValue", "getKeys", "clearAll"];
+            for (let i = 0; i < msinfo.length; i++) {
+                let inputBut = document.createElement('input');
+                inputBut.setAttribute('type', 'button');
+                inputBut.setAttribute('value', msinfo[i]);
+                inputBut.textContent = i;
+                inputBut.addEventListener('click', function () {
+                    switch (inputBut.textContent * 1) {
+                        case 0:
+                            if (input1.value && input2.value) {
+                                classPar.addValue(input1.value, input2.value);
+                                label31.textContent = "Sucsessfully added new field in locStorage";
+                                input1.value = "";
+                                input2.value = "";
+                            }
+                            break;
+                        case 1:
+                            if (input1.value) label31.textContent = classPar.getValue(input1.value);
+                            input1.value = "";
+                            break;
+                        case 2:
+                            if (input1.value) label31.textContent = `Your field was${classPar.deleteValue(input1.value) ? " successfully removed" : "n't removed because it doesn't exist"}`;
+                            input1.value = "";
+                            break;
+                        case 3:
+                            label31.textContent = classPar.getKeys();
+                            break;
+                        case 4:
+                            classPar.removeAll();
+                            break;
+                    }
+                });
+                div4.appendChild(inputBut);
+            }
+
+            maindiv.appendChild(div1);
+            maindiv.appendChild(div2);
+            maindiv.appendChild(div3);
+            maindiv.appendChild(div4);
+            let wrapper = document.getElementById("wrapper");
+            wrapper.appendChild(maindiv);
+        }
+
+        let drinks = new LocStorageClass();
+        let food = new LocStorageClass();
+
+        createLocStorageWork('drinks', drinks);
+        createLocStorageWork('food', food);
+    </script>
+</body>
+
+</html>

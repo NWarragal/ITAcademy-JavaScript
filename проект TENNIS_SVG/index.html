@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tennis_svg</title>
+</head>
+
+<body>
+    <div id="container" style="margin: 30px; display: block;">
+        <div style="display: inline-block;">
+            <button style="cursor: pointer;" id="butstart">Start!</button>
+            <svg width="494" height="50" xmlns="http://www.w3.org/2000/svg">
+                <text x="247" y="40" text-anchor="middle" style="font-size: 50px; font-weight: 1000;" id="score">0:0</text>
+            </svg>
+            <button style="cursor: pointer;" id="butreset">Reset</button>
+        </div>
+        <div>
+            <svg width="700" height="500" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="10" width="600" height="400" stroke="#7f7e6a" fill="#f0ee7e" id="field"></rect>
+                <rect x="0" y="160" width="10" height="100" fill="#15ad59" id="left"></rect>
+                <rect x="590" y="160" width="10" height="100" fill="#1a1597" id="right"></rect>
+                <circle cx="300" cy="210" r="15" fill="#f33" id="ball" />
+            </svg>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
