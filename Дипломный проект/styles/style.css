@@ -1,0 +1,120 @@
+@keyframes hero{
+    from {
+        background-position-x: 0px;
+    }
+    to{
+        background-position-x: -144px;
+    }
+}
+
+body{
+    background-color: black;
+    font-family: 'Press Start 2P', cursive;
+    color: red;
+    font-size: 40px;
+}
+
+body::-webkit-scrollbar {
+	width: 12px;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #b1b2b2;
+}
+
+body::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#info{
+    width: 100%; 
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-color: #b1b2b2;
+}
+
+.logo{
+    width: 50%;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: red;
+}
+
+.bomber{
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 25%;
+    left: 49%;
+    background-image: url('imgcss/tiles_free.png');
+    background-position-x: 0;
+    background-position-y: -48px;
+    animation: hero 0.3s steps(3) infinite;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+    width: 50%;
+    color: white;
+}
+
+.links a{
+    margin-top: 30px;
+}
+
+.links p{
+    margin-top: 30px;
+}
+
+.links input{
+    margin-top: 30px;
+    height: 60px;
+    background-color: black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
+    color: greenyellow;
+    box-shadow: none;
+    border: none;
+    text-align: center;
+}
+
+.links h1{
+    font-size: 50px;
+}
+
+.links div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+}
