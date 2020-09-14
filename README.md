@@ -13,10 +13,10 @@
 #### [Ссылка на проект](https://github.com/NWarragal/ITAcademy-JavaScript/tree/master/%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20TENNIS_SVG)
 Описание:
 
-![]()
+![tennis](https://github.com/NWarragal/ITAcademy-JavaScript/blob/master/images/tennis.jpg)
 
 ### Проект Clock_mvc
 #### [Ссылка на проект](https://github.com/NWarragal/ITAcademy-JavaScript/tree/master/%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20CLOCK_MVC)
 Описание:
 
-![]()
+![clock](https://github.com/NWarragal/ITAcademy-JavaScript/blob/master/images/clock.jpg)
