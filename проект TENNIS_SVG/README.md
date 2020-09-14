@@ -5,4 +5,4 @@
 
 ## Скриншот из игры(Screenshot from game):
 
-![Tennis](https://github.com/NWarragal/ITAcademy-JavaScript/tree/master/%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20TENNIS_SVG)
+![Tennis](https://github.com/NWarragal/ITAcademy-JavaScript/blob/master/images/tennis.jpg)
